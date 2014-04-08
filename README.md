@@ -1,9 +1,9 @@
 # Electric [VOLT, e]
-http://Electric.com
+http://www.electricvolt.net/
 
 ## What is Electric?
 Electric is like Bitcoin, but based on Litecoin.
-http://Electric.com/
+http://www.electricvolt.net/
 
 ## License
 Electric is released under the terms of the MIT license. See [COPYING](COPYING)
@@ -15,10 +15,11 @@ their feature or bug fix is ready.
 
 ## Frequently Asked Questions
 
-### How much VOLT can exist?
+### Volt Distribution?
 Total of 10,000,000,000 coins
 
-### How get doge?
+### Mining & Reward Characteristics
+
 Scrypt Proof of Work
 
 1 Minute Block Targets, 4 Hour Diff Readjustments
@@ -35,7 +36,7 @@ Special reward system: Random block rewards
 
 400,001 — 500,000: 0-6,250 Electric Reward
 
-500,001 - 600,000: 0-3,125 Electric Reward
+500,001 — 600,000: 0-3,125 Electric Reward
 
 600,000+ — 1,000 Reward (flat)
 
