@@ -121,7 +121,7 @@ int main(int argc, char *argv[])
     // Do this early as we don't want to bother initializing if we are just calling IPC
     for (int i = 1; i < argc; i++)
     {
-        if (boost::algorithm::istarts_with(argv[i], "mooncoin:"))
+        if (boost::algorithm::istarts_with(argv[i], "Electric:"))
         {
             const char *strURI = argv[i];
             try {
@@ -170,7 +170,7 @@ int main(int argc, char *argv[])
     // Application identification (must be set before OptionsModel is initialized,
     // as it is used to locate QSettings)
     app.setOrganizationName("Electric");
-    app.setOrganizationDomain("mooncoin-noexist-domain.org");
+    app.setOrganizationDomain("Electric-noexist-domain.org");
     if(GetBoolArg("-testnet")) // Separate UI settings for testnet
         app.setApplicationName("Electric-Qt-testnet");
     else
@@ -278,7 +278,7 @@ int main(int argc, char *argv[])
                 // Check for URI in argv
                 for (int i = 1; i < argc; i++)
                 {
-                    if (boost::algorithm::istarts_with(argv[i], "mooncoin:"))
+                    if (boost::algorithm::istarts_with(argv[i], "Electric:"))
                     {
                         const char *strURI = argv[i];
                         try {

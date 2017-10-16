@@ -5,21 +5,21 @@
 USE_UPNP:=0
 
 INCLUDEPATHS= \
- -I"C:\boost_1_53_0" \
- -I"C:\db-4.8.30.NC\build_unix" \
- -I"C:\openssl-1.0.1e\include" 
+ -I"C:\Deps\boost-1.55.0-mgw" \
+ -I"C:\Deps\db-4.8.30.NC-mgw\build_unix" \
+ -I"C:\Deps\openssl-1.0.2k-mgw\include" 
 
 
 LIBPATHS= \
- -L"C:\boost_1_53_0\stage\lib" \
- -L"C:\db-4.8.30.NC\build_unix" \
- -L"C:\openssl-1.0.1e" 
+ -L"C:\Deps\boost-1.55.0-mgw\stage\lib" \
+ -L"C:\Deps\db-4.8.30.NC-mgw\build_unix" \
+ -L"C:\Deps\openssl-1.0.2k-mgw" 
 
 LIBS= \
- -l boost_system-mgw45-mt-d-1_53 \
- -l boost_filesystem-mgw45-mt-d-1_53 \
- -l boost_program_options-mgw45-mt-d-1_53 \
- -l boost_thread-mgw45-mt-d-1_53 \
+ -l boost_system-mgw49-mt-s-1_55 \
+ -l boost_filesystem-mgw49-mt-d-1_55 \
+ -l boost_program_options-mgw49-mt-d-1_55 \
+ -l boost_thread-mgw49-mt-d-1_55 \
  -l db_cxx \
  -l ssl \
  -l crypto
@@ -31,7 +31,8 @@ CFLAGS=-mthreads -O2 -w -Wall -Wextra -Wformat -Wformat-security -Wno-unused-par
 TESTDEFS = -DTEST_DATA_DIR=$(abspath test/data)
 
 ifdef USE_UPNP
- LIBPATHS += -L"C:\upnpc-exe-win32"
+ INCLUDEPATHS += -I"C:\Deps\miniupnpc-1.8-mgw"
+ LIBPATHS += -L"C:\Deps\miniupnpc-1.8-mgw"
  LIBS += -l miniupnpc -l iphlpapi
  DEFS += -DSTATICLIB -DUSE_UPNP=$(USE_UPNP)
 endif

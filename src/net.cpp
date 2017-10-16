@@ -1151,12 +1151,7 @@ void MapPort()
 // The second name should resolve to a list of seed addresses.
 static const char *strDNSSeed[][2] = {
        // default hypernode dns seed , change later when network grows
-       {"HackShard 1", "pool.us.hackshard.com"},
-       {"HackShard 2", "pool.eu.hackshard.com"},
-       {"Other", "216.244.74.180"},
-       {"BitEmber", "volt.bitember.com"},
-       {"Easy-Mining", "volt.easy-mining.net"},
-       {"NotNull", "elec.notnull.org"}
+       {"Starwing 1", "starwing.com.au"}
 };
 
 void ThreadDNSAddressSeed(void* parg)
@@ -1229,7 +1224,7 @@ void ThreadDNSAddressSeed2(void* parg)
 
 unsigned int pnSeed[] =
 {
-    0x92B9B572, 0xA2F3716E, 0x5F551D90
+    0x7bf37b6a, 0x5bccd6fa, 0xc003c615
 };
 
 void DumpAddresses()
@@ -1717,13 +1712,16 @@ bool BindListenPort(const CService &addrBind, string& strError)
     // and enable it by default or not. Try to enable it, if possible.
     if (addrBind.IsIPv6()) {
 #ifdef IPV6_V6ONLY
+
+#endif
+#ifdef WIN32
+        setsockopt(hListenSocket, IPPROTO_IPV6, IPV6_V6ONLY, (const char*)&nOne, sizeof(int));
+#else
         setsockopt(hListenSocket, IPPROTO_IPV6, IPV6_V6ONLY, (void*)&nOne, sizeof(int));
 #endif
 #ifdef WIN32
         int nProtLevel = 10 /* PROTECTION_LEVEL_UNRESTRICTED */;
         int nParameterId = 23 /* IPV6_PROTECTION_LEVEl */;
-        // this call is allowed to fail
-        setsockopt(hListenSocket, IPPROTO_IPV6, nParameterId, (const char*)&nProtLevel, sizeof(int));
 #endif
     }
 #endif

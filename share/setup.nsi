@@ -5,7 +5,7 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 1.1.0
+!define VERSION 1.1.1
 !define COMPANY "Electric project"
 !define URL http://electricvolt.net/
 
@@ -45,13 +45,13 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile electric-1.1.0-win32-setup.exe
-InstallDir $PROGRAMFILES\Litecoin
+OutFile electric-1.1.1-win32-setup.exe
+InstallDir $PROGRAMFILES\Electric
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
-VIProductVersion 1.1.0.0
+VIProductVersion 1.1.1.0
 VIAddVersionKey ProductName Electric
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"

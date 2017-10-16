@@ -108,7 +108,7 @@ void AskPassphraseDialog::accept()
                 if(model->setWalletEncrypted(true, newpass1))
                 {
                     QMessageBox::warning(this, tr("Wallet encrypted"),
-                                         tr("Electric will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your mooncoins from being stolen by malware infecting your computer."));
+                                         tr("Electric will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your electrics from being stolen by malware infecting your computer."));
                     QApplication::quit();
                 }
                 else
